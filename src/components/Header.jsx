@@ -1,11 +1,41 @@
 import React, { useState } from 'react'
+import InputCheck from './InputCheck'
 
 // imported images
 import Logo from "../images/trxvl.png"
-import InputCheck from './InputCheck'
 import Calendar_icon from "../images/icons/calendar_icon.svg"
 import Person_icon from "../images/icons/person_icon.svg"
+import beachBack from "../images/beach_back.png"
 
+
+// categories image
+import beach from "../images/icons/beach.svg"
+import desert from "../images/icons/desert.svg"
+import mountain from "../images/icons/mountain.svg"
+import iconic from "../images/icons/iconic.svg"
+import houseboats from "../images/icons/houseboats.svg"
+import countryside from "../images/icons/countryside.svg"
+import camping from "../images/icons/camping.svg"
+import castle from "../images/icons/castle.svg"
+import skiing from "../images/icons/skiing.svg"
+import tropical from "../images/icons/tropical.svg"
+import Beach from './Beach'
+
+
+
+
+const pages = [
+  { name: "Beaches", button_image: beach, page: < InputCheck />, back_image: beachBack },
+  { name: "Deserts", button_image: desert, page: <InputCheck />, back_image: beachBack },
+  { name: "Mountains", button_image: mountain, page: <InputCheck />, back_image: beachBack },
+  { name: "Iconic Cities", button_image: iconic, page: <InputCheck />, back_image: beachBack },
+  { name: "Houseboats", button_image: houseboats, page: <InputCheck />, back_image: beachBack },
+  { name: "Countryside", button_image: countryside, page: <InputCheck />, back_image: beachBack },
+  { name: "Camping", button_image: camping, page: <InputCheck />, back_image: beachBack },
+  { name: "Castles", button_image: castle, page: <InputCheck />, back_image: beachBack },
+  { name: "Skiing", button_image: skiing, page: <InputCheck />, back_image: beachBack },
+  { name: "Tropical", button_image: tropical, page: <InputCheck />, back_image: beachBack }
+]
 const Header = () => {
 
 
@@ -45,11 +75,21 @@ const Header = () => {
           <p>Top categories</p>
           <div className="links">
             <ul>
-
+              {
+                pages.map((data, index) => (
+                  <li key={index}>
+                    <button onClick={data.page}>
+                      <img src={data.button_image} />
+                      <p>{data.name}</p>
+                    </button>
+                  </li>
+                ))
+              }
             </ul>
           </div>
         </div>
       </div>
+      <Beach />
     </div>
   )
 }

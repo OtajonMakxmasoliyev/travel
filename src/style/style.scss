@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(to top, rgba(243, 245, 242, 0.829), rgba(243, 245, 242, 0.0), rgba(243, 245, 242, 0.0), rgba(243, 245, 242, 0.0)), url(../images/head_back.png);
+    background: linear-gradient(to top, rgba(243, 245, 242, 0.729), rgba(245, 242, 242, 0), rgba(245, 242, 242, 0), rgba(245, 242, 242, 0)), url(../images/head_back.png);
 
     nav {
         width: 90%;
@@ -167,4 +167,106 @@ label {
 
     color: #FFFFFF;
     text-align: left;
+}
+
+.showcase {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+}
+
+
+.categories {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 37px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+
+    .links {
+        width: 100%;
+        height: 100%;
+
+        ul {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            list-style: none;
+
+            li {
+                button {
+                    background-color: transparent;
+                    border: none;
+                    color: #fff;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 18px;
+
+                    color: #ffffff74;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.owl_carusel {
+    width: 1366px;
+    border: 1px solid blue;
+}
+
+
+
+
+
+.popCard {
+    width: 342px;
+    height: 549px;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .titleRating {
+        width: 90%;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .rate {
+        width: 70px;
+        height: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        img {
+            width: 24px !important;
+            height: 24px !important;
+        }
+    }
+
 }
