@@ -4,10 +4,22 @@
 }
 
 
+@font-face {
+    font-family: 'Netflix Sans';
+    src: url(./fonts/Netflix-Sans-Font/NetflixSans-Regular.woff2);
+}
+
+
+
+body {
+    overflow-x: hidden;
+}
+
 .App {
-    width: 1366px;
+    width: 100%;
     height: auto;
     margin: 0 auto;
+
 }
 
 .Header {
@@ -17,6 +29,8 @@
     flex-direction: column;
     align-items: center;
     background: linear-gradient(to top, rgba(243, 245, 242, 0.729), rgba(245, 242, 242, 0), rgba(245, 242, 242, 0), rgba(245, 242, 242, 0)), url(../images/head_back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 
     nav {
         width: 90%;
@@ -38,8 +52,16 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+.showcase {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 .showcase .inputs {
-    width: 1126px;
+    width: 90%;
     height: 60px;
     border-radius: 16px;
     display: flex;
@@ -154,10 +176,11 @@ label {
 
 
 .showcase h1 {
+    position: relative;
     width: 759px;
     height: 166px;
-    left: 120px;
-    top: 125px;
+    left: -230px;
+
 
     font-family: 'Helvetica';
     font-style: normal;
@@ -167,12 +190,14 @@ label {
 
     color: #FFFFFF;
     text-align: left;
+    // align-self: baseline;
 }
 
 .showcase {
     height: 70%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-around;
 }
 
@@ -183,7 +208,7 @@ label {
 
 
 .categories {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -198,7 +223,7 @@ label {
     color: #FFFFFF;
 
     .links {
-        width: 100%;
+        width: 90%;
         height: 100%;
 
         ul {
@@ -224,12 +249,56 @@ label {
     }
 }
 
+.beach {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    // .white {
+    //     width: 250px;
+    //     border: 1px solid red;
+    //     height: 600px;
+    //     position: absolute;
+    //     z-index: 2;
+    //     box-shadow: 150px 0 100px white;
+    //     background-color: #fff;
+    // }
+
+
+    .blockTitle {
+        width: 90%;
+        text-align: left;
+        font-family: 'Helvetica';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 37px;
+        /* identical to box height */
+
+
+        color: #000;
+        margin-top: 72px;
+        margin-bottom: 32px;
+    }
+
+    .top {
+        color: #fff;
+    }
+
+    .beachCarousel {
+        width: 100%;
+        display: flex;
+
+
+
+    }
+}
 
 
 .owl_carusel {
-    width: 1366px;
-    border: 1px solid blue;
+    width: 100%;
+    margin-left: 5%;
 }
 
 
@@ -239,34 +308,192 @@ label {
 .popCard {
     width: 342px;
     height: 549px;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: #fff;
+
+    p {
+        align-self: flex-start;
+    }
+
+    .dayNight {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        margin: 8px 0;
+        opacity: 0.5;
+    }
+
+    img {
+        width: 310px;
+        height: 200px;
+        border-radius: 16px;
+    }
+
 
     .titleRating {
-        width: 90%;
+        width: 100%;
         height: 30px;
+        margin-top: 24px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        font-family: 'Netflix Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 31px;
+        /* identical to box height */
+
+
+        color: #000000;
 
         p {
             margin: 0;
+
+        }
+
+        .rate {
+            width: 70px;
+            height: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            img {
+                width: 24px !important;
+                height: 24px !important;
+            }
+
+            span {
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 31px;
+            }
+
         }
     }
 
-    .rate {
-        width: 70px;
-        height: 20px;
+
+    .services {
+        height: 47px;
+        width: 100%;
         display: flex;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: space-between;
 
-        img {
-            width: 24px !important;
-            height: 24px !important;
+        .service {
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+
+            p {
+                margin: 8px 0;
+                width: 100%;
+                font-family: 'Netflix Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 15px;
+                text-align: center;
+                opacity: 0.5;
+            }
         }
     }
 
+    .info {
+        width: 100%;
+        text-align: left;
+
+
+        ul {
+            padding-left: 20px;
+
+            li {
+                list-style: disc;
+                color: #000;
+                opacity: 0.4;
+
+                p {
+                    font-family: 'Netflix Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+
+                    color: #000000;
+                    opacity: 0.5;
+                }
+            }
+
+        }
+    }
+
+
+    .sale {
+        width: 100%;
+        text-align: left;
+        font-family: 'Netflix Sans';
+        font-style: normal;
+        font-weight: 100;
+        font-size: 16px;
+        line-height: 20px;
+
+        strong {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 31px;
+            margin-left: 24px;
+            margin-right: 4px;
+        }
+
+        sub {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            opacity: 0.5;
+        }
+    }
+
+
+
+}
+
+.popCard_last {
+    width: 342px;
+    height: 549px;
+
+    background: #3886AB;
+    box-shadow: 0px 4px 16px rgba(158, 158, 158, 0.25);
+    border-radius: 16px;
+    text-align: left;
+    padding: 54px 24px;
+    box-sizing: border-box;
+    font-family: 'Netflix Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+    background-image: url(../images/last_back.png);
+
+    ul {
+        padding: 0;
+        list-style: none;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
 }
