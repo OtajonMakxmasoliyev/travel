@@ -23,6 +23,24 @@ import Havelock from "../../images/honeymoon/Havelock.png"
 import Whitsunday from "../../images/honeymoon/Whitsunday.png"
 
 
+import Bali from "../../images/cites/bali.png"
+import Kerry from "../../images/cites/kerry.png"
+import Ottawa from "../../images/cites/ottawa.webp"
+import Paris from "../../images/cites/paris.png"
+import Sydney from "../../images/cites/sydney.png"
+import Tashkent from "../../images/cites/tashkent.jpg"
+
+
+
+import Plyage from "../../images/offers/plyage.jfif"
+import Snowboard from "../../images/offers/snowboard.jfif"
+import Hotel from "../../images/offers/hotel.png"
+import Flight from "../../images/offers/flight.png"
+
+import Hotels from "../../images/property_type/hotel.png"
+import Apartments from "../../images/property_type/apartment.png"
+import Resorts from "../../images/property_type/resorts.png"
+
 export const beach = [
     { name: "Swiss Apls", image: Swiss, rate: 4.5, day: 3, services: { flight: 2, hotel: 2, transfer: 3, activity: 5 }, quality: ["Tour combo with return airport transfer", "City Tour", "Curious Corner"], sale: 102.952, price: 88.952 },
     { name: "Hallstatt", image: Hallstatt, rate: 4.7, day: 3, services: { flight: 2, hotel: 2, transfer: 3, activity: 5 }, quality: ["Tour combo with return airport transfer", "City Tour", "Curious Corner"], sale: 121.952, price: 101.952 },
@@ -74,5 +92,34 @@ export const Mountain_city_last = {
     ]
 
 }
+
+
+
+export const Vacation = [
+    { image: Kerry, info: "Kerry, Ireland" },
+    { image: Bali, info: "Bali, Indonesia" },
+    { image: Sydney, info: "Sydney, Australia" },
+    { image: Paris, info: "Paris, France" },
+    { image: Tashkent, info: "Tashkent, Uzbekistan" },
+    { image: Ottawa, info: "Ottawa, Canada" },
+]
+
+
+
+export const Property_type = [
+    { image: Hotels, info: "Hotels" },
+    { image: Apartments, info: "Apartments" },
+    { image: Resorts, info: "Resorts" },
+    { image: Plyage, info: "Swimming pool" },
+]
+
+
+
+export const offers = [
+    { image: Plyage, role: "Domestic Flights", title: "Huge savings on flight with trxvl.", info: "Book domestic flights starting @just ₹1459" },
+    { image: Hotel, role: "International Hotels", title: "Enjoy upto 20% off on International Hotels", info: "Make the most of  this deal on your first booking with trxvl." },
+    { image: Snowboard, role: "Snowboard in Alps", title: "Enjoy upto 70% off on Alp", info: "The development of snowboarding was inspired by skateboarding, sledding, surfing and skiing." },
+    { image: Hotel, role: "Beach in Maldive", title: "Enjoy with Maldive Beaches", info: "Beaches also change seasonally. During the winter, storm winds toss sand into the air." },
+]
 
 

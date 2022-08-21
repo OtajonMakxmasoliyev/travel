@@ -9,9 +9,14 @@
     src: url(./fonts/Netflix-Sans-Font/NetflixSans-Regular.woff2);
 }
 
+@font-face {
+    font-family: "Netflix Sans bold";
+    src: url(./fonts/Netflix-Sans-Font/NetflixSans-Bold.woff2);
+}
 
 
-body {
+
+html {
     overflow-x: hidden;
 }
 
@@ -28,7 +33,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(to top, rgba(243, 245, 242, 0.729), rgba(245, 242, 242, 0), rgba(245, 242, 242, 0), rgba(245, 242, 242, 0)), url(../images/head_back.png);
+    background: linear-gradient(to top, white, rgba(245, 242, 242, 0.5), rgba(245, 242, 242, 0), rgba(245, 242, 242, 0), rgba(245, 242, 242, 0), rgba(245, 242, 242, 0), rgba(245, 242, 242, 0), rgba(245, 242, 242, 0)), url(../images/head_back.png);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -223,8 +228,10 @@ label {
 }
 
 .item {
-    display: flex;
-    justify-content: center;
+    width: min-content;
+    height: 100%;
+    border-radius: 16px;
+    box-shadow: 0px 4px 16px rgba(158, 158, 158, 0.25);
 }
 
 
@@ -276,15 +283,7 @@ label {
     flex-direction: column;
     align-items: center;
 
-    // .white {
-    //     width: 250px;
-    //     border: 1px solid red;
-    //     height: 600px;
-    //     position: absolute;
-    //     z-index: 2;
-    //     box-shadow: 150px 0 100px white;
-    //     background-color: #fff;
-    // }
+
 
 
     .blockTitle {
@@ -311,18 +310,25 @@ label {
         margin-bottom: 125px;
     }
 
-    .beachCarousel {
+    .beachCarousel1 {
         width: 100%;
-        display: flex;
+
+        .beachCarousel {
+            width: 100%;
+            display: flex;
 
 
 
+
+        }
     }
+
+
 }
 
 
 .owl_carusel {
-    width: 100%;
+    width: 130%;
     margin-left: 5%;
 }
 
@@ -340,6 +346,8 @@ label {
     padding: 16px;
     border-radius: 16px;
     background-color: #fff;
+    box-shadow: 0px 4px 16px rgba(158, 158, 158, 0.25);
+    border-radius: 16px;
 
     p {
         align-self: flex-start;
@@ -623,7 +631,6 @@ label {
                 margin: 0;
                 padding: 0;
 
-                // visibility: hidden;
                 .copywright {
                     height: 100%;
                     display: flex;
@@ -664,4 +671,226 @@ label {
             }
         }
     }
+}
+
+
+.home {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+        width: 90%;
+        text-align: left;
+        font-family: 'Helvetica';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 37px;
+        /* identical to box height */
+        color: #000;
+        margin-top: 80px;
+        letter-spacing: 1.7px;
+    }
+
+    .top {
+        color: #fff;
+        margin-top: 30px;
+    }
+
+    .beachCarousel {
+        width: 100%;
+
+        .owl-item {
+            width: auto;
+            padding: 15px 0 !important;
+        }
+
+        .item {
+            width: min-content !important;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .image {
+            width: 300px;
+            height: 200px;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                z-index: 0;
+                position: absolute;
+                border-radius: 8px;
+            }
+
+            p {
+                display: block;
+                position: absolute;
+                z-index: 1;
+                left: 24px;
+                bottom: 23px;
+                margin: 0;
+                font-family: 'Netflix Sans';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 31px;
+                /* identical to box height */
+
+
+                color: #FFFFFF
+            }
+        }
+    }
+
+    .BigCard {
+        width: 688px;
+        height: 258px;
+
+        display: flex;
+        justify-content: space-between;
+        padding: 24px 16px;
+        box-sizing: border-box;
+
+        background: #FFFFFF;
+        box-shadow: 0px 4px 16px rgba(158, 158, 158, 0.25);
+        border-radius: 16px;
+
+        .image {
+            height: 100%;
+        }
+
+        .info_block {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: left;
+            position: relative;
+
+            p {
+                margin: 0;
+            }
+
+            .role {
+                font-family: 'Netflix Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+
+                color: #000000;
+
+                opacity: 0.5;
+            }
+
+            .title {
+                width: 100%;
+                margin-top: 4px;
+                font-family: 'Netflix Sans';
+                font-style: normal;
+                font-weight: 800;
+                font-size: 24px;
+                line-height: 31px;
+
+                color: #000000;
+            }
+
+            .info {
+                margin-top: 16px;
+                font-family: 'Netflix Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+
+                color: #000000;
+
+                opacity: 0.5;
+            }
+
+            button {
+                align-self: flex-start;
+                position: absolute;
+                bottom: 0;
+                padding: 16px 32px;
+                gap: 8px;
+
+                width: 140px;
+                height: 52px;
+
+                background: #2659C3;
+                border-radius: 32px;
+                border: none;
+                font-family: 'Netflix Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+
+                color: #FFFFFF;
+            }
+        }
+
+
+        .owl_carusel {
+            width: 100%;
+        }
+    }
+
+    .plan {
+        width: 90%;
+        height: 495px;
+        margin-top: 72px;
+
+
+
+        background: url(../images/plan_back.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 24px;
+        padding: 80px;
+        box-sizing: border-box;
+        text-align: left;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+
+        h2 {
+            font-family: 'Helvetica';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 56px;
+            line-height: 64px;
+
+            color: #FFFFFF;
+        }
+
+        p {
+            font-family: 'Netflix Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 41px;
+            /* identical to box height */
+
+
+            color: #FFFFFF;
+        }
+    }
+}
+
+
+.owl-item {
+    padding: 10px 0 !important;
+
+}
+
+.item {
+    justify-content: left;
 }
