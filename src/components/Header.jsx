@@ -20,6 +20,7 @@ import castle from "../images/icons/castle.svg"
 import skiing from "../images/icons/skiing.svg"
 import tropical from "../images/icons/tropical.svg"
 import Beach from './Beach'
+import Footer from './Footer'
 
 
 
@@ -50,7 +51,10 @@ const Header = () => {
         </ul>
       </nav>
       <div className="showcase">
-        <h1>The whole world awaits.</h1>
+        <div className="siteTitle">
+          <h1>The whole world awaits.</h1>
+        </div>
+
         <div className="inputs">
 
 
@@ -69,7 +73,7 @@ const Header = () => {
             <span>adults</span>
           </div>
 
-          <button type='search'>Search</button>
+          <button type='search' className='search'>Search</button>
         </div>
         <div className="categories">
           <p>Top categories</p>
@@ -90,6 +94,7 @@ const Header = () => {
         </div>
       </div>
       <Beach />
+      <Footer />
     </div>
   )
 }
