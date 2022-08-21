@@ -2,14 +2,14 @@ import React from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import { beach } from './server/server';
-import { recently } from './server/server';
+import { beach, Mountain_city_last, recently, Honeymoon_freebies } from './server/server';
 
 import star from "../images/icons/star.png"
 import airplane_icon from "../images/icons/airplane_icon.png"
 import hotel_icon from "../images/icons/hotel_icon.png"
 import transfer_icon from "../images/icons/transfer_icon.png"
 import activity_icon from "../images/icons/activity_icon.png"
+import Carousel_block from './Carousel_block';
 
 
 
@@ -42,138 +42,20 @@ const options = {
 
 
 const Beach = () => {
-    console.log(beach);
+    console.log(Mountain_city_last.title);
     return (
         <div className='beach'>
             <p className='blockTitle top'>Popular Beach Destinations</p>
             <div className="beachCarousel">
-                <OwlCarousel {...options} className='owl-theme owl_carusel' loop >
-                    {
-                        beach.map((data, index) => (
-                            <div className="item" key={index}>
-                                <div className="popCard">
-                                    <img src={data.image} alt="" />
-                                    <div className="titleRating">
-                                        <p alt={data.name}>{data.name}</p>
-                                        <div className="rate">
-                                            <img src={star} />
-                                            <span>{data.rate}</span>
-                                        </div>
-                                    </div>
-                                    <p className='dayNight'>{data.day} days {data.day + 1} nights</p>
-                                    <div className="services">
-                                        <div className="service">
-                                            <img src={airplane_icon} />
-                                            <p>{data.services.flight} Flight</p>
-                                        </div>
-                                        <div className="service">
-                                            <img src={hotel_icon} />
-                                            <p>{data.services.hotel} Hotels</p>
-                                        </div>
-                                        <div className="service">
-                                            <img src={transfer_icon} />
-                                            <p>{data.services.transfer} Transfers</p>
-                                        </div>
-                                        <div className="service">
-                                            <img src={activity_icon} />
-                                            <p>{data.services.activity} Activity</p>
-                                        </div>
-                                    </div>
-                                    <div className="info">
-                                        <ul>
-                                            {
-                                                data.quality.map((info, index) => (
-                                                    <li key={index}>
-                                                        <p>{info}</p>
-                                                    </li>
-                                                ))
-                                            }
-                                        </ul>
-                                    </div>
-
-                                    <div className="sale">
-                                        <del>₹{data.sale}</del>
-                                        <strong>₹{data.price}</strong>
-                                        <sub>Per Person</sub>
-                                    </div>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </OwlCarousel>
+                <Carousel_block mal={beach} loop={true} />
             </div>
             <p className='blockTitle'>Popular Beach Destinations</p>
             <div className="beachCarousel">
-                <OwlCarousel {...options} className='owl-theme owl_carusel' loop={false} >
-                    {
-                        recently.map((data, index) => (
-                            <div className="item" key={index}>
-                                <div className="popCard">
-                                    <img src={data.image} alt="" />
-                                    <div className="titleRating">
-                                        <p alt={data.name}>{data.name}</p>
-                                        <div className="rate">
-                                            <img src={star} />
-                                            <span>{data.rate}</span>
-                                        </div>
-                                    </div>
-                                    <p className='dayNight'>{data.day} days {data.day + 1} nights</p>
-                                    <div className="services">
-                                        <div className="service">
-                                            <img src={airplane_icon} />
-                                            <p>{data.services.flight} Flight</p>
-                                        </div>
-                                        <div className="service">
-                                            <img src={hotel_icon} />
-                                            <p>{data.services.hotel} Hotels</p>
-                                        </div>
-                                        <div className="service">
-                                            <img src={transfer_icon} />
-                                            <p>{data.services.transfer} Transfers</p>
-                                        </div>
-                                        <div className="service">
-                                            <img src={activity_icon} />
-                                            <p>{data.services.activity} Activity</p>
-                                        </div>
-                                    </div>
-                                    <div className="info">
-                                        <ul>
-                                            {
-                                                data.quality.map((info, index) => (
-                                                    <li key={index}>
-                                                        <p>{info}</p>
-                                                    </li>
-                                                ))
-                                            }
-                                        </ul>
-                                    </div>
-
-                                    <div className="sale">
-                                        <del>₹{data.sale}</del>
-                                        <strong>₹{data.price}</strong>
-                                        <sub>Per Person</sub>
-                                    </div>
-                                </div>
-                            </div>
-                        ))
-                    }
-                    <div className="item">
-                        <div className="popCard_last">
-                            <p className='title'>Summer Bonanza!</p>
-                            <ul>
-                                <li>
-                                    <p>Enjoy confortable transfers in shared coaches</p>
-                                </li>
-                                <li>
-                                    <p>Choose from 5 flights per week</p>
-                                </li>
-                                <li>
-                                    <p>Get a free Rapid Antigen Test at selected hotels</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </OwlCarousel>
+                <Carousel_block mal={recently} lastInfo={Mountain_city_last} />
+            </div>
+            <p className='blockTitle'>Honeymoon Freebies Special</p>
+            <div className="beachCarousel bottom">
+                <Carousel_block mal={Honeymoon_freebies} loop={true} />
             </div>
         </div >
     )
