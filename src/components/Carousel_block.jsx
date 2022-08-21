@@ -16,7 +16,7 @@ const options = {
     margin: 10,
     dots: false,
     nav: false,
-    margin: 24,
+    margin: 32,
     responsive: {
         0: {
             items: 1
@@ -25,13 +25,13 @@ const options = {
             items: 3
         },
         1000: {
-            items: 3
+            items: 2
         },
         1366: {
-            items: 4
+            items: 3
         },
-        1600: {
-            items: 5
+        1920: {
+            items: 4
         }
 
     }
@@ -46,7 +46,7 @@ const Carousel_block = (props) => {
                 {...options} loop={props.loop}
                 className='owl-theme owl_carusel'  >
                 {
-                    props.mal.map((data, index) => (
+                    props.mal && props.mal.map((data, index) => (
                         <div className="item" key={index}>
                             <div className="popCard">
                                 <img src={data.image} alt="" />

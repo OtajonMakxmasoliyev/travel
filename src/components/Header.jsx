@@ -21,6 +21,7 @@ import skiing from "../images/icons/skiing.svg"
 import tropical from "../images/icons/tropical.svg"
 import Beach from './Beach'
 import Footer from './Footer'
+import Home from './Home'
 
 
 
@@ -93,6 +94,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+      <Home />
       <Beach />
       <Footer />
     </div>

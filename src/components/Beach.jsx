@@ -46,15 +46,15 @@ const Beach = () => {
     return (
         <div className='beach'>
             <p className='blockTitle top'>Popular Beach Destinations</p>
-            <div className="beachCarousel">
+            <div className="beachCarousel1">
                 <Carousel_block mal={beach} loop={true} />
             </div>
             <p className='blockTitle'>Popular Beach Destinations</p>
-            <div className="beachCarousel">
+            <div className="beachCarousel1">
                 <Carousel_block mal={recently} lastInfo={Mountain_city_last} />
             </div>
             <p className='blockTitle'>Honeymoon Freebies Special</p>
-            <div className="beachCarousel bottom">
+            <div className="beachCarousel1 bottom">
                 <Carousel_block mal={Honeymoon_freebies} loop={true} />
             </div>
         </div >
