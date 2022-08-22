@@ -5,7 +5,7 @@ import InputCheck from './InputCheck'
 import Logo from "../images/trxvl.png"
 import Calendar_icon from "../images/icons/calendar_icon.svg"
 import Person_icon from "../images/icons/person_icon.svg"
-import beachBack from "../images/beach_back.png"
+
 
 
 // categories image
@@ -26,9 +26,11 @@ import Home from './Home'
 
 
 
+import beachBack from "../images/beach_back.png"
+import head_back from "../images/head_back.png"
 const pages = [
-  { name: "Beaches", button_image: beach, page: < InputCheck />, back_image: beachBack },
-  { name: "Deserts", button_image: desert, page: <InputCheck />, back_image: beachBack },
+  { name: "Beaches", button_image: beach, page: < Beach />, back_image: beachBack },
+  { name: "Deserts", button_image: desert, page: <Home />, back_image: head_back },
   { name: "Mountains", button_image: mountain, page: <InputCheck />, back_image: beachBack },
   { name: "Iconic Cities", button_image: iconic, page: <InputCheck />, back_image: beachBack },
   { name: "Houseboats", button_image: houseboats, page: <InputCheck />, back_image: beachBack },
@@ -38,66 +40,77 @@ const pages = [
   { name: "Skiing", button_image: skiing, page: <InputCheck />, back_image: beachBack },
   { name: "Tropical", button_image: tropical, page: <InputCheck />, back_image: beachBack }
 ]
+
+
 const Header = () => {
 
+  const [page, setPage] = useState(<Home />);
+  const [showcaseBack, setShowcaseBack] = useState(head_back);
 
   return (
     <div className='Header'>
-      <nav>
-        <div className="logo">
-          <img src={Logo} alt="TravelX Logo" />
-        </div>
-        <ul>
+      <div className='Header_block'>
 
-        </ul>
-      </nav>
-      <div className="showcase">
-        <div className="siteTitle">
-          <h1>The whole world awaits.</h1>
-        </div>
+        <img src={showcaseBack} className="backImage" />
+        <nav>
+          <div className="logo">
+            <img src={Logo} alt="TravelX Logo" />
+          </div>
+          <ul>
 
-        <div className="inputs">
-
-
-
-
-          <input type="search" name='name' className='search_input' placeholder='Search destinations, hotels' />
-          {/* <input type={type} placeholder='salom' name='chekIn' id='checkIn' onClick={() => setType("date")} onMouseLeave={() => setType("text")} /> */}
-
-          <InputCheck placeHolder="Check In" Id="checkIn" /> <InputCheck placeHolder="Check Out" Id="checkIn" />
-
-          <div className="input_span">
-            <img src={Person_icon} alt="" />
-            <input type="number" value={0} name="room" id="room" />
-            <span>room</span>
-            <input type="number" value={0} name="adult" id="adult" />
-            <span>adults</span>
+          </ul>
+        </nav>
+        <div className="showcase" >
+          <div className="siteTitle">
+            <h1>The whole world awaits.</h1>
           </div>
 
-          <button type='search' className='search'>Search</button>
-        </div>
-        <div className="categories">
-          <p>Top categories</p>
-          <div className="links">
-            <ul>
-              {
-                pages.map((data, index) => (
-                  <li key={index}>
-                    <button onClick={data.page}>
-                      <img src={data.button_image} />
-                      <p>{data.name}</p>
-                    </button>
-                  </li>
-                ))
-              }
-            </ul>
+          <div className="inputs">
+
+
+
+
+            <input type="search" name='name' className='search_input' placeholder='Search destinations, hotels' />
+            {/* <input type={type} placeholder='salom' name='chekIn' id='checkIn' onClick={() => setType("date")} onMouseLeave={() => setType("text")} /> */}
+
+            <InputCheck placeHolder="Check In" Id="checkIn" /> <InputCheck placeHolder="Check Out" Id="checkIn" />
+
+            <div className="input_span">
+              <img src={Person_icon} alt="" />
+              <input type="number" value={0} name="room" id="room" />
+              <span>room</span>
+              <input type="number" value={0} name="adult" id="adult" />
+              <span>adults</span>
+            </div>
+
+            <button type='search' className='search'>Search</button>
+          </div>
+          <div className="categories">
+            <p>Top categories</p>
+            <div className="links">
+              <ul>
+                {
+                  pages.map((data, index) => (
+                    <li key={index}>
+                      <button onClick={() => {
+                        setPage(data.page);
+                        setShowcaseBack(data.back_image)
+                      }}>
+                        <img src={data.button_image} />
+                        <p>{data.name}</p>
+                      </button>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-      <Home />
-      <Beach />
+      {page}
+      {/* <Beach /> */}
       <Footer />
-    </div>
+    </div >
   )
 }
 
