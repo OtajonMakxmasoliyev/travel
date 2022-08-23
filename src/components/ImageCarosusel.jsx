@@ -1,7 +1,9 @@
 import React from 'react'
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+
 import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+import { beach } from './server/server';
 
 
 const options = {
@@ -39,10 +41,22 @@ const optionsBigCard = {
             items: 1
         },
         600: {
-            items: 3
+            items: 1
+        },
+        700: {
+            items: 1
+        },
+        800: {
+            items: 2
+        },
+        900: {
+            items: 2
         },
         1000: {
-            items: 3
+            items: 2
+        },
+        1300: {
+            items: 2
         },
         1366: {
             items: 2
@@ -54,13 +68,32 @@ const optionsBigCard = {
     }
 }
 
-
 const ImageCarousel = (props) => {
+    const item = [];
+    beach.forEach((data) => item.push(
+
+        <div className="item" key={data}>
+            <div className="image">
+                <img src={data.image} alt={data.info} />
+                <p>{data.info}</p>
+            </div>
+        </div>
+    ))
+    console.log(item);
+
+
+
+
+
+
     return (
         <div className="beachCarousel">
 
             {
-                props.mal && <OwlCarousel center={false}
+                props.mal &&
+
+
+                <OwlCarousel center={false}
 
                     {...options} loop={props.loop}
                     className='owl-theme owl_carusel'  >{
@@ -75,7 +108,7 @@ const ImageCarousel = (props) => {
                 </OwlCarousel>
             }
 
-            {
+            {/* {
                 props.bigCard && <OwlCarousel center={false}
 
                     {...optionsBigCard} loop={props.loop} items={props.responsive}
@@ -86,17 +119,18 @@ const ImageCarousel = (props) => {
                                     <div className="image">
                                         <img src={bigCardData.image} />
                                     </div>
-                                    <div className="info_block">
-                                        <p className='role'>{bigCardData.role}</p>
-                                        <p className='title'>{bigCardData.title}</p>
-                                        <p className='info'>{bigCardData.info}</p>
-                                        <button>Book Now</button>
-                                    </div>
+                                </div>
+                                <div className="info_block">
+                                    <p className='role'>{bigCardData.role}</p>
+                                    <p className='title'>{bigCardData.title}</p>
+                                    <p className='info'>{bigCardData.info}</p>
+                                    <button>Book Now</button>
                                 </div>
                             </div>
+
                         ))}
                 </OwlCarousel>
-            }
+            } */}
 
 
         </div >

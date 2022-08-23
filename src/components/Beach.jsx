@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { createElement } from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import { beach, Mountain_city_last, recently, Honeymoon_freebies } from './server/server';
-
+import { beach, Mountain_city, recently, Honeymoon_freebies, offers, Vacation } from './server/server';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 import star from "../images/icons/star.png"
 import airplane_icon from "../images/icons/airplane_icon.png"
 import hotel_icon from "../images/icons/hotel_icon.png"
@@ -42,20 +43,84 @@ const options = {
 
 
 const Beach = () => {
-    console.log(Mountain_city_last.title);
+
+    const responsive = {
+        0: { items: 1 },
+        568: { items: 2 },
+        1024: { items: 2 },
+        1200: { items: 3 },
+        1600: { items: 4 }
+    };
+    const loga = (data) => (
+        <div className="popCard">
+            <img src={data.image} alt="" />
+            <div className="titleRating">
+                <p alt={data.name}>{data.name}</p>
+                <div className="rate">
+                    <img src={star} />
+                    <span>{data.rate}</span>
+                </div>
+            </div>
+            <p className='dayNight'>{data.day} days {data.day + 1} nights</p>
+            <div className="services">
+                <div className="service">
+                    <img src={airplane_icon} />
+                    <p>{data.services.flight} Flight</p>
+                </div>
+                <div className="service">
+                    <img src={hotel_icon} />
+                    <p>{data.services.hotel} Hotels</p>
+                </div>
+                <div className="service">
+                    <img src={transfer_icon} />
+                    <p>{data.services.transfer} Transfers</p>
+                </div>
+                <div className="service">
+                    <img src={activity_icon} />
+                    <p>{data.services.activity} Activity</p>
+                </div>
+            </div>
+            <div className="info">
+                <ul>
+                    {
+                        data.quality.map((info, index) => (
+                            <li key={index}>
+                                <p>{info}</p>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+
+            <div className="sale">
+                <del>₹{data.sale}</del>
+                <strong>₹{data.price}</strong>
+                <sub>Per Person</sub>
+            </div>
+        </div>
+    )
+    const BeachDestination = beach.map(loga)
+    const RecentlyViewed = recently.map(loga)
+    const AllInclusivePackages = Mountain_city.map(loga)
+    const HoneymoonFreebiesSpecial = Honeymoon_freebies.map(loga)
     return (
         <div className='beach'>
-            <p className='blockTitle top'>Popular Beach Destinations</p>
-            <div className="beachCarousel1">
-                <Carousel_block mal={beach} loop={true} />
+            <div className="block">
+                <p className='title top'>Top Vacation Destinations</p>
+                <AliceCarousel infinite={true} autoPlay={true} disableDotsControls={true} disableButtonsControls={true} responsive={responsive} mouseTracking items={BeachDestination} />
             </div>
-            <p className='blockTitle'>Popular Beach Destinations</p>
-            <div className="beachCarousel1">
-                <Carousel_block mal={recently} lastInfo={Mountain_city_last} />
+            <div className="block">
+                <p className='title'>Recently Viewed</p>
+                <AliceCarousel infinite={true} autoPlay={true} disableDotsControls={true} disableButtonsControls={true} responsive={responsive} mouseTracking items={BeachDestination} />
             </div>
-            <p className='blockTitle'>Honeymoon Freebies Special</p>
-            <div className="beachCarousel1 bottom">
-                <Carousel_block mal={Honeymoon_freebies} loop={true} />
+            <div className="block">
+                <p className='title'>Recently Viewed</p>
+                <AliceCarousel infinite={true} autoPlay={true} disableDotsControls={true} disableButtonsControls={true} responsive={responsive} mouseTracking items={AllInclusivePackages} />
+            </div>
+            <div className="block">
+                <p className='title'>Recently Viewed</p>
+                <AliceCarousel infinite={true} autoPlay={true} disableDotsControls={true} disableButtonsControls={true} responsive={responsive} mouseTracking items={HoneymoonFreebiesSpecial} />
+                {/* The end */}
             </div>
         </div >
     )

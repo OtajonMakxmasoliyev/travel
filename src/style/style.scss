@@ -1,3 +1,6 @@
+@import "react-alice-carousel/lib/scss/alice-carousel.scss";
+@import "./resnponsive";
+
 @font-face {
     font-family: 'Helvetica';
     src: url(./fonts/Helvetica-Font/Helvetica.ttf);
@@ -311,12 +314,13 @@ label {
     align-items: center;
     animation: onload linear 1s;
     margin-top: -200px;
+    margin-left: 10%;
 
 
 
 
     .blockTitle {
-        width: 90%;
+        width: 100%;
         text-align: left;
         font-family: 'Helvetica';
         font-style: normal;
@@ -341,10 +345,14 @@ label {
 
     .beachCarousel1 {
         width: 100%;
+        display: flex;
+        justify-content: left !important;
+        padding: 0;
 
         .beachCarousel {
             width: 100%;
             display: flex;
+            margin-left: -5%;
 
 
 
@@ -357,8 +365,8 @@ label {
 
 
 .owl_carusel {
-    width: 130%;
-    margin-left: 5%;
+    // width: 100%;
+    margin-left: 7%;
 }
 
 
@@ -375,7 +383,7 @@ label {
     padding: 16px;
     border-radius: 16px;
     background-color: #fff;
-    box-shadow: 0px 4px 16px rgba(158, 158, 158, 0.25);
+    border: 1px solid rgba(158, 158, 158, 0.25);
     border-radius: 16px;
 
     p {
@@ -703,6 +711,8 @@ label {
 }
 
 
+
+
 .home {
     width: 100%;
     display: flex;
@@ -772,148 +782,60 @@ label {
                 /* identical to box height */
 
 
-                color: #FFFFFF
+                // color: #FFFFFF
+                color: #000;
             }
         }
     }
 
-    .BigCard {
-        width: 688px;
-        height: 258px;
-
-        display: flex;
-        justify-content: space-between;
-        padding: 24px 16px;
-        box-sizing: border-box;
-
-        background: #FFFFFF;
-        box-shadow: 0px 4px 16px rgba(158, 158, 158, 0.25);
-        border-radius: 16px;
-
-        .image {
-            height: 100%;
-        }
-
-        .info_block {
-            width: 50%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            text-align: left;
-            position: relative;
-
-            p {
-                margin: 0;
-            }
-
-            .role {
-                font-family: 'Netflix Sans';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 20px;
-
-                color: #000000;
-
-                opacity: 0.5;
-            }
-
-            .title {
-                width: 100%;
-                margin-top: 4px;
-                font-family: 'Netflix Sans';
-                font-style: normal;
-                font-weight: 800;
-                font-size: 24px;
-                line-height: 31px;
-
-                color: #000000;
-            }
-
-            .info {
-                margin-top: 16px;
-                font-family: 'Netflix Sans';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 20px;
-
-                color: #000000;
-
-                opacity: 0.5;
-            }
-
-            button {
-                align-self: flex-start;
-                position: absolute;
-                bottom: 0;
-                padding: 16px 32px;
-                gap: 8px;
-
-                width: 140px;
-                height: 52px;
-
-                background: #2659C3;
-                border-radius: 32px;
-                border: none;
-                font-family: 'Netflix Sans';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 20px;
-
-                color: #FFFFFF;
-            }
-        }
 
 
-        .owl_carusel {
-            width: 100%;
-        }
-    }
-
-    .plan {
-        width: 90%;
-        height: 495px;
-        margin-top: 72px;
-
-
-
-        background: url(../images/plan_back.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-radius: 24px;
-        padding: 80px;
-        box-sizing: border-box;
-        text-align: left;
-        display: flex;
-        justify-content: space-around;
-        flex-direction: column;
-
-        h2 {
-            font-family: 'Helvetica';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 56px;
-            line-height: 64px;
-
-            color: #FFFFFF;
-        }
-
-        p {
-            font-family: 'Netflix Sans';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 32px;
-            line-height: 41px;
-            /* identical to box height */
-
-
-            color: #FFFFFF;
-        }
+    .owl_carusel {
+        width: 100%;
     }
 }
+
+.plan {
+    width: 90%;
+    height: 495px;
+    margin-top: 72px;
+
+
+
+    background: url(../images/plan_back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 24px;
+    padding: 80px;
+    box-sizing: border-box;
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+    h2 {
+        font-family: 'Helvetica';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 64px;
+
+        color: #FFFFFF;
+    }
+
+    p {
+        font-family: 'Netflix Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 41px;
+        /* identical to box height */
+
+
+        color: #FFFFFF;
+    }
+}
+
 
 
 .owl-item {
@@ -941,13 +863,13 @@ label {
     margin-top: 100px;
 
     .left {
-        width: 20%;
+        width: 30%;
         display: flex;
         justify-content: flex-start;
     }
 
     .right {
-        width: 70%;
+        width: 60%;
         height: 86%;
         padding: 5%;
         padding-left: 0;
@@ -1119,4 +1041,163 @@ label {
     position: absolute;
     z-index: -1;
     background: linear-gradient(to top, rgb(247, 246, 246, 1), rgb(247, 246, 246, 0.8), rgb(247, 246, 246, 0.6), rgb(247, 246, 246, 0.0), );
+}
+
+
+
+
+
+
+.home {
+
+    .block {
+        width: 90%;
+
+        .aliceCarousel {
+            width: auto;
+
+            .image {
+                width: 310px;
+                height: 200px;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    z-index: 1;
+                    border-radius: 16px;
+                }
+
+                p {
+                    position: absolute;
+                    z-index: 2;
+                    position: 0;
+                    color: #fff;
+                    margin: 0;
+                    bottom: 23px;
+                    left: 24px;
+                    @include aliceInfo()
+                }
+            }
+        }
+    }
+}
+
+.alice-carousel {
+    width: 110%;
+    padding: 20px;
+    margin-left: -20px;
+}
+
+.BigCard {
+    width: 628px;
+    height: 258px;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 16px;
+    box-sizing: border-box;
+
+    background: #FFFFFF;
+    border: 1px solid rgba(158, 158, 158, 0.25);
+    border-radius: 16px;
+
+    .image {
+        width: 50%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+
+    .info_block {
+        width: 45%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: left;
+        position: relative;
+
+        p {
+            margin: 0;
+        }
+
+        .role {
+            font-family: 'Netflix Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+
+            color: #000000;
+
+            opacity: 0.5;
+        }
+
+        .title {
+            width: 100%;
+            margin-top: 4px;
+            font-family: 'Netflix Sans';
+            font-style: normal;
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 31px;
+
+            color: #000000;
+        }
+
+        .info {
+            margin-top: 16px;
+            font-family: 'Netflix Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+
+            color: #000000;
+
+            opacity: 0.5;
+        }
+
+        button {
+            align-self: flex-start;
+            position: absolute;
+            bottom: 0;
+            padding: 16px 32px;
+            gap: 8px;
+
+            width: 140px;
+            height: 52px;
+
+            background: #2659C3;
+            border-radius: 32px;
+            border: none;
+            font-family: 'Netflix Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+
+            color: #FFFFFF;
+        }
+    }
+}
+
+.block {
+    margin-bottom: 72px;
+    width: 100%;
+
+    .title {
+        text-align: left;
+        @include blockTitle();
+    }
+
+    .top {
+        color: #fff;
+    }
+
 }

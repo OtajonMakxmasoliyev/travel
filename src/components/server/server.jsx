@@ -117,9 +117,9 @@ export const Property_type = [
 
 export const offers = [
     { image: Plyage, role: "Domestic Flights", title: "Huge savings on flight with trxvl.", info: "Book domestic flights starting @just ₹1459" },
-    { image: Hotel, role: "International Hotels", title: "Enjoy upto 20% off on International Hotels", info: "Make the most of  this deal on your first booking with trxvl." },
-    { image: Snowboard, role: "Snowboard in Alps", title: "Enjoy upto 70% off on Alp", info: "The development of snowboarding was inspired by skateboarding, sledding, surfing and skiing." },
-    { image: Hotel, role: "Beach in Maldive", title: "Enjoy with Maldive Beaches", info: "Beaches also change seasonally. During the winter, storm winds toss sand into the air." },
+    { image: Hotel, role: "International Hotels", title: "Enjoy", info: "Make the most of  this deal on your first booking with trxvl." },
+    { image: Snowboard, role: "Snowboard in Alps", title: "Enjoy upto 70% off on Alp", info: "The development of snowboarding was inspired by skateboarding." },
+    { image: Hotel, role: "Beach in Maldive", title: "Enjoy with Maldive Beaches", info: "Beaches also change seasonally. During the winter." },
 ]
 
 
