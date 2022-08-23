@@ -77,9 +77,9 @@ const Header = () => {
 
             <div className="input_span">
               <img src={Person_icon} alt="" />
-              <input type="number" value={0} name="room" id="room" />
+              <input type="number" name="room" id="room" />
               <span>room</span>
-              <input type="number" value={0} name="adult" id="adult" />
+              <input type="number" name="adult" id="adult" />
               <span>adults</span>
             </div>
 

@@ -10,6 +10,7 @@ import airplane_icon from "../images/icons/airplane_icon.png"
 import hotel_icon from "../images/icons/hotel_icon.png"
 import transfer_icon from "../images/icons/transfer_icon.png"
 import activity_icon from "../images/icons/activity_icon.png"
+import { Vacation } from './server/server';
 
 const options = {
     center: false,
@@ -22,10 +23,25 @@ const options = {
             items: 1
         },
         600: {
-            items: 3
+            items: 1
+        },
+        700: {
+            items: 1
+        },
+        800: {
+            items: 2
         },
         1000: {
             items: 2
+        },
+        1100: {
+            items: 3
+        },
+        1200: {
+            items: 3
+        },
+        1300: {
+            items: 3,
         },
         1366: {
             items: 3
@@ -39,6 +55,7 @@ const options = {
 
 
 const Carousel_block = (props) => {
+    
     return (
         <div className="beachCarousel">
             <OwlCarousel center={false}
