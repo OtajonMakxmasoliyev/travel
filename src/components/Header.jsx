@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import InputCheck from './InputCheck'
 
 // imported images
@@ -28,6 +28,16 @@ import Home from './Home'
 
 import beachBack from "../images/beach_back.png"
 import head_back from "../images/head_back.png"
+import { toHaveStyle } from '@testing-library/jest-dom/dist/matchers'
+
+
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
 const pages = [
   { name: "Beaches", button_image: beach, page: < Beach />, back_image: beachBack },
   { name: "Deserts", button_image: desert, page: <Home />, back_image: head_back },
@@ -43,12 +53,34 @@ const pages = [
 
 
 const Header = () => {
-
   const [page, setPage] = useState(<Home />);
   const [showcaseBack, setShowcaseBack] = useState(head_back);
+  const [styleButton, setStyle] = useState(null)
+
+  const ScreenWidth = window.innerWidth;
+  let salom = true;
+  if (ScreenWidth < 1000) {
+
+    salom = true;
+  } else {
+    salom = false;
+  }
+
+  const topstyle = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "blue",
+    border: "1px solid red",
+    padding: 0,
+    width: 150,
+    height: 50,
+    margin: 0
+  }
 
   return (
     <div className='Header'>
+
       <div className='Header_block'>
 
         <img src={showcaseBack} className="backImage" />
@@ -62,7 +94,7 @@ const Header = () => {
         </nav>
         <div className="showcase" >
           <div className="siteTitle">
-            <h1>The whole world awaits.</h1>
+            <h1>{ScreenWidth}The whole world awaits.</h1>
           </div>
 
           <div className="inputs">
@@ -71,9 +103,9 @@ const Header = () => {
 
 
             <input type="search" name='name' className='search_input' placeholder='Search destinations, hotels' />
-            {/* <input type={type} placeholder='salom' name='chekIn' id='checkIn' onClick={() => setType("date")} onMouseLeave={() => setType("text")} /> */}
 
-            <InputCheck placeHolder="Check In" Id="checkIn" /> <InputCheck placeHolder="Check Out" Id="checkIn" />
+            <InputCheck placeHolder="Check In" Id="checkIn" />
+            <InputCheck placeHolder="Check Out" Id="checkIn" />
 
             <div className="input_span">
               <img src={Person_icon} alt="" />
@@ -85,26 +117,50 @@ const Header = () => {
 
             <button type='search' className='search'>Search</button>
           </div>
-          <div className="categories">
-            <p>Top categories</p>
-            <div className="links">
-              <ul>
-                {
-                  pages.map((data, index) => (
-                    <li key={index}>
-                      <button onClick={() => {
-                        setPage(data.page);
-                        setShowcaseBack(data.back_image)
-                      }}>
-                        <img src={data.button_image} />
-                        <p>{data.name}</p>
-                      </button>
-                    </li>
-                  ))
-                }
-              </ul>
+          {salom ?
+            <div className="categoriestop" >
+              <div className="links">
+                <ul>
+                  {
+                    pages.map((data, index) => (
+                      <li key={index}>
+                        <button onClick={() => {
+                          setPage(data.page);
+                          setShowcaseBack(data.back_image);
+
+                        }} style={styleButton}>
+                          <p>{data.name}</p>
+                          <img src={data.button_image} />
+
+                        </button>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
             </div>
-          </div>
+            :
+            <div className="categories">
+              <p>Top categories</p>
+              <div className="links">
+                <ul>
+                  {
+                    pages.map((data, index) => (
+                      <li key={index}>
+                        <button onClick={() => {
+                          setPage(data.page);
+                          setShowcaseBack(data.back_image)
+                        }}>
+                          <img src={data.button_image} />
+                          <p>{data.name}</p>
+                        </button>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
+          }
         </div>
       </div>
       {page}

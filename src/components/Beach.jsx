@@ -1,8 +1,5 @@
 import React, { createElement } from 'react';
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
-import { beach, Mountain_city, recently, Honeymoon_freebies, offers, Vacation } from './server/server';
+import { beach, Mountain_city, recently, Honeymoon_freebies } from './server/server';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import star from "../images/icons/star.png"
@@ -10,36 +7,9 @@ import airplane_icon from "../images/icons/airplane_icon.png"
 import hotel_icon from "../images/icons/hotel_icon.png"
 import transfer_icon from "../images/icons/transfer_icon.png"
 import activity_icon from "../images/icons/activity_icon.png"
-import Carousel_block from './Carousel_block';
 
 
 
-const options = {
-    loop: true,
-    center: false,
-    margin: 10,
-    dots: false,
-    nav: false,
-    margin: 24,
-    responsive: {
-        0: {
-            items: 1
-        },
-        600: {
-            items: 3
-        },
-        1000: {
-            items: 3
-        },
-        1366: {
-            items: 4
-        },
-        1600: {
-            items: 5
-        }
-
-    }
-}
 
 
 const Beach = () => {

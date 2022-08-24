@@ -1,5 +1,4 @@
-import React from 'react'
-import ImageCarousel from './ImageCarosusel'
+import React, { useState } from 'react'
 import { offers, Property_type, Vacation } from './server/server'
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
@@ -15,10 +14,11 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            SearchInfo: ""
+            SearchInfo: "",
+            type: "phone",
+            placeholder: "+91 Mobile number"
         }
     }
-
 
     changHandler = (event) => {
         this.setState({ SearchInfo: event.target.value })
@@ -47,15 +47,19 @@ class Home extends React.Component {
 
 
     render() {
+
+
         const responsive = {
             0: { items: 1 },
+            464: { items: 1 },
             568: { items: 2 },
             1024: { items: 3 },
             1600: { items: 4 }
         };
         const responsiveBig = {
             0: { items: 1 },
-            568: { items: 2 },
+            762: { items: 1 },
+            800: { items: 2 },
             1024: { items: 2 },
             1600: { items: 2 }
         };
@@ -88,15 +92,15 @@ class Home extends React.Component {
             <div className='home' >
                 <div className="block">
                     <p className='title top'>Top Vacation Destinations</p>
-                    <AliceCarousel infinite={true} autoPlay={true} disableDotsControls={true} disableButtonsControls={true} responsive={responsive} mouseTracking items={itemVacation} />
+                    <AliceCarousel autoPlayInterval={2000} infinite={true} autoPlay={true} disableDotsControls={true} disableButtonsControls={true} responsive={responsive} mouseTracking items={itemVacation} />
                 </div>
                 <div className="block">
                     <p className='title'>Browse by property type</p>
-                    <AliceCarousel infinite={true} autoPlay={true} disableDotsControls={true} disableButtonsControls={true} responsive={responsiveBig} mouseTracking items={offer} />
+                    <AliceCarousel autoPlayInterval={3000} infinite={true} autoPlay={true} disableDotsControls={true} disableButtonsControls={true} responsive={responsiveBig} mouseTracking items={offer} />
                 </div>
                 <div className="block">
                     <p className='title'>Browse by property type</p>
-                    <AliceCarousel infinite={true} autoPlay={true} disableDotsControls={true} disableButtonsControls={true} responsive={responsive} mouseTracking items={itemBrowse} />
+                    <AliceCarousel autoPlayInterval={1500} infinite={true} autoPlay={true} disableDotsControls={true} disableButtonsControls={true} responsive={responsive} mouseTracking items={itemBrowse} />
                 </div>
 
                 <div className="plan">
@@ -113,12 +117,12 @@ class Home extends React.Component {
 
                         <div className="right_left">
                             <div className="buttons">
-                                <button>Mobile</button>
-                                <button>Email</button>
+                                <button onClick={() => this.setState({ type: "phone", placeholder: "+91 Mobile number" })}>Phone</button>
+                                <button onClick={() => this.setState({ type: "email", placeholder: "Enter your email" })}>Email</button>
                             </div>
                             <p className='inputInfo'>Enter your phone number to receive a text with a link to download the app.</p>
                             <div className="search">
-                                <input type="text" name='infoSearch' placeholder='+91 Mobile number' onChange={this.changHandler} />
+                                <input type={this.state.type} name='infoSearch' placeholder={this.state.placeholder} onChange={this.changHandler} />
                                 <button type='search'
                                     onClick={this.CreateSearch || this.CreateSearch}>Search</button>
                             </div>
