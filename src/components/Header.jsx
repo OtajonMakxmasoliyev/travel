@@ -149,7 +149,7 @@ class Header extends React.Component {
               <button type='search' className='search' onClick={() => this.setState({ ekran: false })}>Search</button>
             </div>
             <button className="toogle" onClick={() => this.setState({ ekran: !this.state.ekran })}>menu</button>
-            <div className="categories" style={this.state.ekran ? { height: "0" } : { height: "100%" }} >
+            <div className="categories" style={this.state.ekran ? { height: "0" } : { height: "50%" }} >
               <p className='linksTitle'>Top categories</p>
               <div className="links">
                 <ul >
