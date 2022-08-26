@@ -28,16 +28,9 @@ import Home from './Home'
 
 import beachBack from "../images/beach_back.png"
 import head_back from "../images/head_back.png"
-import { toHaveStyle } from '@testing-library/jest-dom/dist/matchers'
 
 
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height
-  };
-}
+
 const pages = [
   { name: "Beaches", button_image: beach, page: < Beach />, back_image: beachBack },
   { name: "Deserts", button_image: desert, page: <Home />, back_image: head_back },
@@ -52,104 +45,120 @@ const pages = [
 ]
 
 
-const Header = () => {
-  const [page, setPage] = useState(<Home />);
-  const [showcaseBack, setShowcaseBack] = useState(head_back);
-  const [styleButton, setStyle] = useState(null)
+class Header extends React.Component {
 
-  const ScreenWidth = window.innerWidth;
-  let salom = true;
-  if (ScreenWidth < 1000) {
 
-    salom = true;
-  } else {
-    salom = false;
+  constructor(props) {
+    super(props);
+    this.state = {
+      favoritecolor: "red",
+      page: <Home />,
+      showcaseBack: head_back,
+      styleButton: null,
+      ekran: false,
+      salom: false,
+    };
+  }
+  componentDidMount(e) {
+    const myFunction = (x) => {
+      if (x.matches) { // If media query matches
+        this.setState({ ekran: true });
+      } else {
+        this.setState({ ekran: false });
+      }
+    }
+
+    var x = window.matchMedia("(max-width: 1025px)")
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction)
+
   }
 
-  const topstyle = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "blue",
-    border: "1px solid red",
-    padding: 0,
-    width: 150,
-    height: 50,
-    margin: 0
-  }
+  // componentDidMount() {
 
-  return (
-    <div className='Header'>
+  //   if (window.innerWidth < 1025) {
+  //     setTimeout(() => {
+  //       this.setState({ ekran: false })
+  //     }, 1000)
+  //     console.log(this.state.showcaseBack);
+  //   } else {
+  //     setInterval(() => {
+  //       this.setState({ ekran: true })
+  //     }, 5000)
+  //   }
 
-      <div className='Header_block'>
-
-        <img src={showcaseBack} className="backImage" />
-        <nav>
-          <div className="logo">
-            <img src={Logo} alt="TravelX Logo" />
-          </div>
-          <ul>
-
-          </ul>
-        </nav>
-        <div className="showcase" >
-          <div className="siteTitle">
-            <h1>{ScreenWidth}The whole world awaits.</h1>
-          </div>
-
-          <div className="inputs">
+  // };
 
 
+  // componentDidUpdate() {
+  //   let l = 0;
+  //   if (window.innerWidth > 1025) {
+  //     this.setState({ ekran: false })
+
+  //   }
+  //   let arr = ['a', 'b', 'c'];
+  //   setTimeout(() => {
+  //     l = l + 1
+  //   }, 500)
+  //   if (l === 5) {
+  //     console.log(l);
+  //     return null
+  //   }
+
+  // };
 
 
-            <input type="search" name='name' className='search_input' placeholder='Search destinations, hotels' />
 
-            <InputCheck placeHolder="Check In" Id="checkIn" />
-            <InputCheck placeHolder="Check Out" Id="checkIn" />
+  render() {
+    return (
+      <div className='Header'>
 
-            <div className="input_span">
-              <img src={Person_icon} alt="" />
-              <input type="number" name="room" id="room" />
-              <span>room</span>
-              <input type="number" name="adult" id="adult" />
-              <span>adults</span>
+        <div className='Header_block'>
+          <img src={this.state.showcaseBack} className="backImage" />
+          <nav>
+            <div className="logo">
+              <img src={Logo} alt="TravelX Logo" />
+            </div>
+            <ul>
+
+            </ul>
+          </nav>
+          <div className="showcase" >
+            <div className="siteTitle">
+              <h1>The whole world awaits.</h1>
             </div>
 
-            <button type='search' className='search'>Search</button>
-          </div>
-          {salom ?
-            <div className="categoriestop" >
-              <div className="links">
-                <ul>
-                  {
-                    pages.map((data, index) => (
-                      <li key={index}>
-                        <button onClick={() => {
-                          setPage(data.page);
-                          setShowcaseBack(data.back_image);
+            <div className="inputs">
 
-                        }} style={styleButton}>
-                          <p>{data.name}</p>
-                          <img src={data.button_image} />
 
-                        </button>
-                      </li>
-                    ))
-                  }
-                </ul>
+
+
+              <input type="search" name='name' className='search_input' placeholder='Search destinations, hotels' />
+
+              <InputCheck placeHolder="Check In" Id="checkIn" />
+              <InputCheck placeHolder="Check Out" Id="checkIn" />
+
+              <div className="input_span">
+                <img src={Person_icon} alt="" />
+                <input type="number" name="room" id="room" />
+                <span>room</span>
+                <input type="number" name="adult" id="adult" />
+                <span>adults</span>
               </div>
+
+              <button type='search' className='search' onClick={() => this.setState({ ekran: false })}>Search</button>
             </div>
-            :
-            <div className="categories">
-              <p>Top categories</p>
+            <button className="toogle" onClick={() => this.setState({ ekran: !this.state.ekran })}>menu</button>
+            <div className="categories" style={this.state.ekran ? { height: "0" } : { height: "100%" }} >
+              <p className='linksTitle'>Top categories</p>
               <div className="links">
-                <ul>
+                <ul >
                   {
                     pages.map((data, index) => (
                       <li key={index}>
                         <button onClick={() => {
-                          setPage(data.page);
-                          setShowcaseBack(data.back_image)
+                          this.setState({ page: data.page });
+                          this.setState({ showcaseBack: data.back_image })
                         }}>
                           <img src={data.button_image} />
                           <p>{data.name}</p>
@@ -160,14 +169,14 @@ const Header = () => {
                 </ul>
               </div>
             </div>
-          }
-        </div>
-      </div>
-      {page}
-      {/* <Beach /> */}
-      <Footer />
-    </div >
-  )
+          </div>
+        </div >
+        {this.state.page}
+        {/* <Beach /> */}
+        <Footer />
+      </div >
+    )
+  }
 }
 
 export default Header

@@ -50,9 +50,9 @@ class Home extends React.Component {
 
 
         const responsive = {
-            0: { items: 1 },
             464: { items: 1 },
-            568: { items: 2 },
+            762: { items: 1 },
+            800: { items: 2 },
             1024: { items: 3 },
             1600: { items: 4 }
         };
@@ -90,7 +90,7 @@ class Home extends React.Component {
         const itemBrowse = Property_type.map(loga)
         return (
             <div className='home' >
-                <div className="block">
+                <div className="block vacation">
                     <p className='title top'>Top Vacation Destinations</p>
                     <AliceCarousel autoPlayInterval={2000} infinite={true} autoPlay={true} disableDotsControls={true} disableButtonsControls={true} responsive={responsive} mouseTracking items={itemVacation} />
                 </div>
@@ -98,7 +98,7 @@ class Home extends React.Component {
                     <p className='title'>Browse by property type</p>
                     <AliceCarousel autoPlayInterval={3000} infinite={true} autoPlay={true} disableDotsControls={true} disableButtonsControls={true} responsive={responsiveBig} mouseTracking items={offer} />
                 </div>
-                <div className="block">
+                <div className="block vacation">
                     <p className='title'>Browse by property type</p>
                     <AliceCarousel autoPlayInterval={1500} infinite={true} autoPlay={true} disableDotsControls={true} disableButtonsControls={true} responsive={responsive} mouseTracking items={itemBrowse} />
                 </div>
