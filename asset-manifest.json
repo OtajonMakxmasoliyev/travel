@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/travel/static/css/main.63f6a9d0.css",
-    "main.js": "/travel/static/js/main.5039661f.js",
+    "main.css": "/travel/static/css/main.d87a8f7e.css",
+    "main.js": "/travel/static/js/main.968528e6.js",
     "static/js/787.8a220983.chunk.js": "/travel/static/js/787.8a220983.chunk.js",
     "static/media/head_back.png": "/travel/static/media/head_back.1cf5461066fc09f960a1.png",
     "static/media/beach_back.png": "/travel/static/media/beach_back.c0c1da3670671c1f21b2.png",
@@ -61,12 +61,12 @@
     "static/media/person_icon.svg": "/travel/static/media/person_icon.235755ef3a4fde43786690d101858827.svg",
     "static/media/search_icon.svg": "/travel/static/media/search_icon.b102560a9ce84fda8c9e.svg",
     "static/media/calendar_icon.svg": "/travel/static/media/calendar_icon.90c72e411a182dd727793f0322cd7938.svg",
-    "main.63f6a9d0.css.map": "/travel/static/css/main.63f6a9d0.css.map",
-    "main.5039661f.js.map": "/travel/static/js/main.5039661f.js.map",
+    "main.d87a8f7e.css.map": "/travel/static/css/main.d87a8f7e.css.map",
+    "main.968528e6.js.map": "/travel/static/js/main.968528e6.js.map",
     "787.8a220983.chunk.js.map": "/travel/static/js/787.8a220983.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.63f6a9d0.css",
-    "static/js/main.5039661f.js"
+    "static/css/main.d87a8f7e.css",
+    "static/js/main.968528e6.js"
   ]
 }
